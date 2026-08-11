@@ -1,1 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Harsh Website Maker creates modern, professional and mobile-friendly websites for businesses, freelancers and personal brands.">
+
+  <meta name="keywords"
+        content="website maker, website design, business website, portfolio website, Harsh Website Maker">
+
+  <meta name="author" content="Harsh Website Maker">
+
+  <title>Harsh Website Maker | Professional Website Design</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.94);
+      border-bottom: 1px solid #292929;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo-letter {
+      width: 45px;
+      height: 45px;
+      border: 2px solid #d9a441;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d9a441;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #eeeeee;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #d9a441;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #d9a441;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding-top: 90px;
+      background:
+        radial-gradient(circle at center, #1c160b 0%, #080808 48%, #050505 100%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .gold {
+      color: #d9a441;
+    }
+
+    .hero p {
+      color: #c8c8c8;
+      font-size: 19px;
+      max-width: 700px;
+      margin: 0 auto 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 30px;
+      border: 1px solid #d9a441;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #d9a441;
+      color: #080808;
+    }
+
+    .btn-primary:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      color: #d9a441;
+    }
+
+    .btn-secondary:hover {
+      background: #d9a441;
+      color: #080808;
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #0d0d0d;
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #c8c8c8;
+      font-size: 18px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #111111;
+      border: 1px solid #292929;
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #d9a441;
+      box-shadow: 0 10px 35px rgba(217, 164, 65, 0.12);
+    }
+
+    .card-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #d9a441;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      background: #0d0d0d;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      min-height: 220px;
+      border: 1px solid #292929;
+      border-radius: 18px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      background: linear-gradient(145deg, #171717, #090909);
+    }
+
+    .project h3 {
+      color: #d9a441;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #aaa;
+    }
+
+    /* PRICING */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      border: 1px solid #292929;
+      border-radius: 18px;
+      padding: 35px 25px;
+      text-align: center;
+      background: #111111;
+    }
+
+    .price-card.featured {
+      border-color: #d9a441;
+      transform: scale(1.03);
+    }
+
+    .price-card h3 {
+      color: #d9a441;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    .price-card li {
+      margin: 9px 0;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #0d0d0d;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #292929;
+      color: #888;
+      background: #050505;
+    }
+
+    footer span {
+      color: #d9a441;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #080808;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 0;
+        display: none;
+        border-bottom: 1px solid #292929;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="container">
+      <nav>
+
+        <a href="#home" class="logo-area">
+          <div class="logo-letter">H</div>
+          <span>Harsh Website Maker</span>
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HOME -->
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <h1>
+          Build Your
+          <span class="gold">Digital Presence</span>
+        </h1>
+
+        <p>
+          Harsh Website Maker creates modern, professional and
+          mobile-friendly websites for businesses, freelancers,
+          creators and personal brands.
+        </p>
+
+        <div class="buttons">
+          <a href="#services" class="btn btn-primary">
+            Explore Services
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            Get Started
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About <span class="gold">Us</span></h2>
+        <p>Simple ideas. Professional websites.</p>
+      </div>
+
+      <div class="about-box">
+        <p>
+          Harsh Website Maker helps individuals, freelancers and
+          small businesses create a professional online presence.
+          We focus on clean design, easy navigation, responsive
+          layouts and modern website experiences.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our <span class="gold">Services</span></h2>
+        <p>Website solutions for different needs.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Business Websites</h3>
+          <p>
+            Professional websites for businesses, shops and
+            service providers.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💼</div>
+          <h3>Portfolio Websites</h3>
+          <p>
+            Showcase your skills, projects, experience and
+            professional work.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🛍️</div>
+          <h3>Product Websites</h3>
+          <p>
+            Present products and services with attractive
+            layouts and clear information.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>
+            Responsive websites designed for phones,
+            tablets and computers.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <h3>Modern Design</h3>
+          <p>
+            Clean layouts, premium styling and professional
+            presentation.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Landing Pages</h3>
+          <p>
+            Focused landing pages for promotions, services
+            and online campaigns.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our <span class="gold">Portfolio</span></h2>
+        <p>Demo projects and website concepts.</p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="project">
+          <h3>Business Website</h3>
+          <p>
+            Modern demo website concept for a small business.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3>Personal Portfolio</h3>
+          <p>
+            Professional portfolio concept for freelancers
+            and creators.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3>Service Website</h3>
+          <p>
+            Clean service-focused website concept with
+            contact options.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section id="pricing">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Simple <span class="gold">Pricing</span></h2>
+        <p>Choose a package that fits your needs.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3>Starter</h3>
+
+          <div class="price">₹999+</div>
+
+          <ul>
+            <li>✓ Basic website</li>
+            <li>✓ Mobile friendly</li>
+            <li>✓ Contact section</li>
+            <li>✓ Basic design</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-secondary">
+            Choose Plan
+          </a>
+        </div>
+
+
+        <div class="price-card featured">
+          <h3>Business</h3>
+
+          <div class="price">₹1,999+</div>
+
+          <ul>
+            <li>✓ Multiple sections</li>
+            <li>✓ Responsive design</li>
+            <li>✓ Services section</li>
+            <li>✓ Portfolio section</li>
+            <li>✓ Contact section</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary">
+            Choose Plan
+          </a>
+        </div>
+
+
+        <div class="price-card">
+          <h3>Custom</h3>
+
+          <div class="price">Let's Talk</div>
+
+          <ul>
+            <li>✓ Custom design</li>
+            <li>✓ Custom features</li>
+            <li>✓ Custom pages</li>
+            <li>✓ Project-based pricing</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-secondary">
+            Contact Us
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Let's <span class="gold">Work Together</span></h2>
+        <p>Have a website idea? Let's discuss it.</p>
+      </div>
+
+      <div class="contact-box">
+
+        <p>
+          Contact us for website design, business websites,
+          portfolio websites and custom website projects.
+        </p>
+
+        <!-- CHANGE THESE TWO LINKS -->
+
+        <div class="buttons">
+
+          <a
+            href="mailto:YOUR-EMAIL@gmail.com"
+            class="btn btn-primary">
+            Email Us
+          </a>
+
+          <a
+            href="https://wa.me/YOURNUMBER"
+            class="btn btn-secondary">
+            WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © 2026 <span>Harsh Website Maker</span>.
+      All Rights Reserved.
+    </p>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        document.getElementById("navLinks").classList.remove("active");
+      });
+    });
+
+  </script>
+
+</body>
+</html>
