@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tsharshchaudhary-toratto.github.io/websites-maker-/sitemap.xml
